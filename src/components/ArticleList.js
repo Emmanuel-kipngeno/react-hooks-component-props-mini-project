@@ -1,11 +1,14 @@
 import React from "react";
+import Article from "./Article";
 
-const Header = ({ name }) => {
+const ArticleList = ({ posts }) => {
   return (
-    <header>
-      <h1>{name}</h1>
-    </header>
+    <main>
+      {posts.map((post, index) => (
+        <Article key={index} {...post} />
+      ))}
+    </main>
   );
 };
 
-export default Header;
+export default ArticleList;
